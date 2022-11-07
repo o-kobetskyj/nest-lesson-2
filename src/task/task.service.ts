@@ -9,7 +9,7 @@ export class TaskService {
   getTask(): ITask[] {
     return this.tasks;
   }
-  getTaskById(id: string): ITask {
+  getTaskById(id: string): ITask | null{
     const task = this.tasks.find((t) => t.id === +id);
     return task;
   }

@@ -1,3 +1,4 @@
+// ? enum
 export enum Status {
   CREATED = 'created',
   PROCESSING = 'processing',
@@ -10,7 +11,7 @@ export interface ITask {
   id: number;
   task: string;
   status: Status;
-tags: string[];
+  tags: string[];
   createdAte: Date;
   updatedAte: Date;
 }
