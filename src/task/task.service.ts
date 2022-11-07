@@ -4,10 +4,7 @@ import { ITask } from './task.interface';
 
 @Injectable()
 export class TaskService {
-  private tasks: ITask[] = [
-    { id: 1, task: 'task-1' },
-    { id: 2, task: 'task-2' },
-  ];
+  private tasks: ITask[] = [];
 
   getTask(): ITask[] {
     return this.tasks;
@@ -16,8 +13,8 @@ export class TaskService {
     const task = this.tasks.find((t) => t.id === +id);
     return task;
   }
-  createTask(task: string): ITask {
-    const newTask = new Task(task)
+  createTask(task: string, tags: string[]): ITask {
+    const newTask = new Task(task, tags)
     this.tasks.push(newTask);
     return newTask;
   }
